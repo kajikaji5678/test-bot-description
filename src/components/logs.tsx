@@ -49,9 +49,9 @@ const logs: LogItem[] = [
 
 export default function Logs() {
     return(
-        <section className="mt-3 max-w-6xl rounded mx-auto px-6 py-12 bg-[#21242C]">
+        <section className="mt-9 max-w-6xl rounded mx-auto px-6 py-12 bg-[#21242C]">
             {logs.map((log) => 
-                <div className="relative pl-10 mt-4">
+                <div key={log.version} className="relative pl-10 mt-4 first:mt-0">
                     <div className="absolute left-0 top-2 h-4 w-4 rounded-full bg-blue-500" />
                     <p className="text-slate-400">{log.data}</p>
                     <h3 className="text-xl font-bold text-white">
