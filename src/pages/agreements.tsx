@@ -59,9 +59,10 @@ export default function Agreements() {
           利用規約
         </h2>
         <List items={agreements}></List>
-        <h2 className="mb-8 text-3xl font-bold text-white">
+        <h2 className="mb-8 text-3xl mt-6 font-bold text-white">
           プライバシーポリシー
         </h2>
+        <List items={policy}></List>
       </section>
     </main>
   );
