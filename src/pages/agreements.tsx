@@ -20,6 +20,36 @@ const agreements: agreement[] = [
   }
 ]
 
+const policy: agreement[] = [
+  {
+    title: "取得する情報",
+    description: ["不要に個人情報を収集しません、絶対に、確信しています"]
+  }
+]
+
+function List({ items }: { items: agreement[] }) {
+  return (
+    <>
+      {items.map((agreement) => (
+        <div key={agreement.title} className="relative pl-10 mt-6 first:mt-0">
+          <div className="absolute left-0 top-2 h-4 w-4 rounded-full bg-blue-500" />
+          <h3 className="text-xl font-bold text-white">
+            {agreement.title}
+          </h3>
+          <ul className="mt-2 space-y-1 text-slate-300">
+            {agreement.description.map((item, index) => (
+              <li key={index} className="flex items-start gap-2">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-400" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </>
+  );
+}
+
 export default function Agreements() {
   return (
     <main className="bg-[#010b1d] min-h-screen pt-24">
@@ -28,23 +58,10 @@ export default function Agreements() {
         <h2 className="mb-8 text-3xl font-bold text-white">
           利用規約
         </h2>
-
-        {agreements.map((agreement) => (
-          <div key={agreement.title} className="relative pl-10 mt-6 first:mt-0">
-            <div className="absolute left-0 top-2 h-4 w-4 rounded-full bg-blue-500" />
-            <h3 className="text-xl font-bold text-white">
-              {agreement.title}
-            </h3>
-            <ul className="mt-2 space-y-1 text-slate-300">
-              {agreement.description.map((item, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-400" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <List items={agreements}></List>
+        <h2 className="mb-8 text-3xl font-bold text-white">
+          プライバシーポリシー
+        </h2>
       </section>
     </main>
   );
