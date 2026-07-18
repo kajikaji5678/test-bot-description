@@ -29,9 +29,9 @@ export default async function handler
             candidate
         });
 
-    if (error) {
-        return res.status(400).json({
-            message: error.message
+    if (error?.code === "23505") {
+        return res.status(409).json({
+            message: "すでに投票済みです"
         });
     }
 
