@@ -58,6 +58,8 @@ function Vote() {
       localStorage.getItem("discordUser") ?? "null"
     );
 
+    console.log("discordUser:", discordUser);
+
     if (!discordUser) {
       alert("Discordログインが必要です");
       return;
