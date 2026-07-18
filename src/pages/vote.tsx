@@ -6,6 +6,7 @@ type Candidate = {
 };
 
 function Vote() {
+  const DISCORD_AUTH_URL = "https://discord.com/oauth2/authorize?client_id=1493620353065422898&response_type=code&redirect_uri=https%3A%2F%2Ftest-bot-description.vercel.app%2Fcallback&scope=identify";
   const candidates: Candidate[] = [
     {
       name: "二一(ふたかず)",
@@ -98,6 +99,14 @@ function Vote() {
           <p className="mt-4 text-slate-300">
             New Eron Botのアイコン投票ページです
           </p>
+          <div className="mt-4">
+            <a
+              href={DISCORD_AUTH_URL}
+              className="inline-block bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded"
+            >
+              Discordでログイン
+            </a>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
             {candidates.map((candidate) => (
               <div key={candidate.name} className="rounded-lg bg-black/20 p-4 text-white">
