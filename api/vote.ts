@@ -40,3 +40,5 @@ export default async function handler(req: any, res:any) {
         message: "投票しました",
     });
 }
+
+// テスト
