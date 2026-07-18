@@ -54,13 +54,22 @@ function Vote() {
 
     if (!confirmed) return;
 
+    const discordUser = JSON.parse(
+      localStorage.getItem("discordUser") ?? "null"
+    );
+
+    if (!discordUser) {
+      alert("Discordログインが必要です");
+      return;
+    }
+
     const res = await fetch("/api/vote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user_id: "test-user",
+        user_id: discordUser.id,
         candidate: candidate.name
       })
     });
