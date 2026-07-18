@@ -10,7 +10,7 @@ function Header() {
         <nav className="hidden md:block">
           <ul className="flex items-center gap-8 text-slate-300">
             <li>
-              <a href="#" className="hover:text-white transition-colors duration-200">
+              <a href="/" className="hover:text-white transition-colors duration-200">
                 ホーム
               </a>
             </li>
@@ -29,10 +29,15 @@ function Header() {
                 利用規約
               </a>
             </li>
+            <li>
+              <a href="/vote" className="hover:text-white transition-colors duration-200">
+                投票
+              </a>
+            </li>
           </ul>
         </nav>
 
-        <button className="md:hidden text-2xl"
+        <button className="md:hidden text-3xl"
           onClick={() => setOpen(!open)}>≡</button>
       </div>
 
@@ -41,7 +46,7 @@ function Header() {
         <nav className="border-t border-white/20 px-6 py-4">
           <ul className="flex flex-col gap-4 text-slate-300">
             <li>
-              <a href="#" className="hover:text-white transition-colors duration-200">
+              <a href="/" className="hover:text-white transition-colors duration-200">
                 ホーム
               </a>
             </li>
@@ -58,6 +63,11 @@ function Header() {
             <li>
               <a href="/agreements" className="hover:text-white transition-colors duration-200">
                 利用規約
+              </a>
+            </li>
+            <li>
+              <a href="/vote" className="hover:text-white transition-colors duration-200">
+                投票
               </a>
             </li>
           </ul>
