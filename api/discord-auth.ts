@@ -20,7 +20,7 @@ export default async function handler(
 
     // code → access_token へ交換
     const tokenResponse = await fetch(
-        "https://discord.com/api/oauth2/token",
+        "https://discord.com/api/v10/oauth2/token",
         {
             method: "POST",
             headers: {
@@ -38,12 +38,19 @@ export default async function handler(
 
     const tokenData = await tokenResponse.json();
 
+    if (!tokenData.access_token) {
+        return res.status(400).json({
+            message: "アクセストークン取得失敗",
+            tokenData,
+        });
+    }
+
     console.log("token status:" , tokenResponse.status);
     console.log("token data:", tokenData);
 
     // access_tokenでユーザー取得
     const userResponse = await fetch(
-        "https://discord.com/api/users/@me",
+        "https://discord.com/api/v10/users/@me",
         {
             headers: {
                 Authorization: `Bearer ${tokenData.access_token}`,
@@ -52,6 +59,9 @@ export default async function handler(
     );
 
     const user = await userResponse.json();
+
+    console.log("user status:", userResponse.status);
+    console.log("user data", user);
 
     return res.status(200).json({
         id: user.id,
