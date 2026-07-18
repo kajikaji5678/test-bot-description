@@ -34,34 +34,34 @@ function Header() {
 
         <button className="md:hidden text-2xl"
           onClick={() => setOpen(!open)}>≡</button>
+      </div>
 
-        <div className={`md:hidden overflow-hidden transition-all duration-300 
+      <div className={`md:hidden overflow-hidden transition-all duration-300 
         ${open ? "max-h-64 opacity-100" : "max-h-0 opacity-0"}`}>
-          <nav className="border-t border-white/20 px-6 py-4">
-            <ul className="flex flex-col gap-4 text-slate-500">
-              <li>
-                <a href="#" className="hover:text-whitet transition-colors duration-200">
-                  ホーム
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-whitet transition-colors duration-200">
-                  コマンド
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-whitet transition-colors duration-200">
-                  機能
-                </a>
-              </li>
-              <li>
-                <a href="/agreements" className="hover:text-whitet transition-colors duration-200">
-                  利用規約
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <nav className="border-t border-white/20 px-6 py-4">
+          <ul className="flex flex-col gap-4 text-slate-300">
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-200">
+                ホーム
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-200">
+                コマンド
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-white transition-colors duration-200">
+                機能
+              </a>
+            </li>
+            <li>
+              <a href="/agreements" className="hover:text-white transition-colors duration-200">
+                利用規約
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   )
