@@ -38,6 +38,9 @@ export default async function handler(
 
     const tokenData = await tokenResponse.json();
 
+    console.log("token status:" , tokenResponse.status);
+    console.log("token data:", tokenData);
+
     // access_tokenでユーザー取得
     const userResponse = await fetch(
         "https://discord.com/api/users/@me",
